@@ -33,11 +33,11 @@ export default function Header() {
         </div>
 
         <div className={styles.nav__account}>
-          <Link className={styles.nav__link} href="/Login">
-            Connexion / Inscription
-          </Link>
           <Link className={styles.nav__link} href="/About">
             À propos
+          </Link>
+          <Link className={styles.nav__link_account} href="/Login">
+            Connexion / Inscription
           </Link>
           {/*<Link href='/Account'>Mon Compte</Link>*/}
         </div>
