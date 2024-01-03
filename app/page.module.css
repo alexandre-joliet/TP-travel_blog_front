@@ -1,17 +1,17 @@
-.footer{
-    
-    padding: 1rem;
-    
-    bottom : 0;
-    width: 100%;
-    margin-bottom: 0rem;
-   
-  }
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
 
- .articles{
-margin-bottom: 6rem;
- }
+.main__title {
+  font-size: 4rem;
+  color: #0E2E57;
+}
 
-
-
-   
+.main__articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;  
+}
