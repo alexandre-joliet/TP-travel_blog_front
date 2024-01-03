@@ -1,40 +1,35 @@
 .header {
-    background-color: #ffd69d;
-    display: flex;
-    align-items: center;
-   
-    
-}
-.img_logo {
-   width: 5rem;
-   height: 5em;
-   padding: 0.5rem;
-   margin-left: 3rem;
-   border-radius: 100%;
-  
-}
-.nav {
-    display: flex;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    justify-content: space-between;
-    width: 100%;
-    padding: 1rem;
-   
-}
-.menu {
-    display: flex;
-    gap:1rem ;
-    
+  background-color: white;
+  display: flex;
+  align-items: center;
 }
 
-.account {
-    display: flex;
-    gap:1rem ;
+.header__logo {
+  width: 5rem;
+  height: 5rem;
+  padding: 0.5rem;
+  border-radius: 100%;
 }
-.link {
-    text-decoration: none;
-    color: rgb(4, 10, 66);
-    font-weight: bold;
 
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.nav__menu a {
+  margin-right: 1rem;
+}
+
+.nav__account a {
+  margin-left: 1rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: grey;
+  font-weight: 400;
 }
