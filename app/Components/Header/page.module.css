@@ -1,0 +1,40 @@
+.header {
+    background-color: #ffd69d;
+    display: flex;
+    align-items: center;
+   
+    
+}
+.img_logo {
+   width: 5rem;
+   height: 5em;
+   padding: 0.5rem;
+   margin-left: 3rem;
+   border-radius: 100%;
+  
+}
+.nav {
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+   
+}
+.menu {
+    display: flex;
+    gap:1rem ;
+    
+}
+
+.account {
+    display: flex;
+    gap:1rem ;
+}
+.link {
+    text-decoration: none;
+    color: rgb(4, 10, 66);
+    font-weight: bold;
+
+}

@@ -1,0 +1,41 @@
+
+.card{
+background-color: #ffd69d;
+margin-right: 20%;
+margin-left: 20%;
+border-radius: 10px;
+
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(4, 10, 66);
+    margin-top: 3%;
+    margin-bottom: 2rem;
+}
+
+.contenent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 4%;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+}
+.img{
+margin-left:37%;
+margin-top:2rem;
+    width: 12rem;
+    height:8rem;
+    object-fit: cover;
+    border-radius: 8px;
+    
+}
+.p{
+    margin-top: 1rem;
+}

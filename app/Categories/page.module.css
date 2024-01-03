@@ -1,0 +1,31 @@
+@media screen and (min-width : 780px)  {
+.full-width-img {
+    margin: auto;
+    width: 90%;
+}
+    
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 10rem 4rem 10rem;
+}
+
+.categorie{
+    display: block;
+    background-color: #ffd69d;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    color: rgb(4, 10, 66);
+    font-weight: bold;
+    margin:1rem;
+    text-align: center;
+    padding: 1em;
+    font-size: 20px;
+}
+.title{
+    text-align: center;
+    color: rgb(4, 10, 66);
+}

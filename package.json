@@ -1,0 +1,25 @@
+{
+  "name": "blog2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "date-fns": "^3.0.0",
+    "dayjs": "^1.11.10",
+    "djs": "^0.0.2",
+    "next": "14.0.3",
+    "node": "^21.2.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3"
+  }
+}

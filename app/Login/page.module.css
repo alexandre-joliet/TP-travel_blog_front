@@ -1,0 +1,130 @@
+/*.background {
+  background-image: url(../../public/images/.jpg);
+  object-position: cover;
+}*/
+  
+ 
+
+.connexion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(4, 10, 66);
+  margin-top: 10px;
+
+}
+
+.connexion_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;  
+
+}
+
+.connex_form{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffd69d;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  height: auto;
+  width: 25%;
+  block-size: 10rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+ .submit {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+ text-align: center;
+ padding-top: 1rem;
+ }
+ 
+ .submit2{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+ text-align: center;
+ padding-top: 1.6rem;
+
+ 
+
+
+ }
+ .password {
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+ .username {
+  border-radius: 5px;
+  border-width: 1px;
+
+ }
+
+
+
+
+
+
+
+
+
+/* Inscription form style*/
+.inscription{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   color: rgb(4, 10, 66);
+}
+
+.inscription_form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+
+}
+
+.inscrip_form{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffd69d; color: rgb(4, 10, 66);
+  border-radius: 8%;
+  margin-top: 1.5rem;
+  height: auto;
+  width: 25%;
+  block-size: 20rem;
+  margin-bottom: 4.4rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.firstname{
+  border-radius: 5px;
+  border-width: 1px;
+} 
+
+.lastname{
+  border-radius: 5px;
+  border-width: 1px;
+}
+.pseudo{
+  border-radius: 5px;
+  border-width: 1px;
+}
+.email{
+  border-radius: 5px;
+  border-width: 1px;
+}
+.pass{
+  border-radius: 5px;
+  border-width: 1px;
+  
+}
+
+.message{
+  justify-content: center;
+}

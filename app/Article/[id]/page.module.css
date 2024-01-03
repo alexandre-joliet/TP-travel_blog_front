@@ -1,0 +1,41 @@
+.article{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffd69d;
+    border-radius: 16px;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 90%;
+   
+    
+}
+.img{
+  
+  width: 95%;
+   max-height: 35rem; 
+   object-fit: cover;
+    align-self: center;
+    border-radius: 16px;
+    margin: 1rem 0.5rem 0.5rem 0.5rem ;
+}
+.title{
+    margin-left: 1rem;
+    color: rgb(4, 10, 66);
+}
+.auteur{
+    margin-left:1rem;
+    color: rgb(4, 10, 66);
+}
+.date{
+    margin-left: 1rem;
+     color: rgb(4, 10, 66);
+}
+.category{
+    margin-left: 1rem;
+    color: rgb(4, 10, 66);
+}
+.contenent{
+    margin-left: 1rem;
+    color: rgb(4, 10, 66);
+}

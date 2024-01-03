@@ -1,0 +1,37 @@
+.footer{ 
+    background-color: #ffd69d;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0;
+    
+    bottom: 0;
+    
+        
+}
+.img_footer {
+    width: 1rem;
+    height: 1rem;
+    padding: 0.5rem;
+    box-sizing: content-box;
+}
+
+.terms{
+    display: flex;
+    gap:1rem ;
+    margin-left: 1.5rem;
+}
+.social_networks{
+    display: flex;
+    margin-right: 1rem;
+
+}
+.link {
+    text-decoration: none;
+    color: rgb(4, 10, 66);
+    font-weight: bold;
+
+}
