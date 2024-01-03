@@ -118,3 +118,25 @@
     text-decoration: none;
     width: max-content;
 }
+
+
+/* MEDIA QUERIES */
+
+@media all and (max-width: 749px) {
+    .article {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 750px) and (max-width: 1350px) {
+    .article {
+        width: 45%;
+    }
+}
+
+@media all and (min-width: 1920px) {
+    .article {
+        width: 20%;
+    }
+}
+
