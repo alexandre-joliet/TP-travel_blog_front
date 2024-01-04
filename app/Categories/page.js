@@ -18,25 +18,21 @@ const Categories = () => {
   }, []);
 
   return (
-    <>
-      <div className={styles.div}>
-        <main>
-          <h1 className={styles.title}>Catégories</h1>
-          <div className={styles.categories}>
-            {myData &&
-              myData.map((result) => (
-                <Link
-                  key={result.id}
-                  className={styles.categorie}
-                  href={`/Category/${result.id}/articles`}
-                >
-                  {result.label}
-                </Link>
-              ))}
-          </div>
-        </main>
-      </div>
-    </>
+    <main className={styles.main}>
+      <h1 className={styles.title}>Catégories</h1>
+      <section className={styles.section__categories}>
+        {myData &&
+          myData.map((result) => (
+            <Link
+              key={result.id}
+              className={styles.section__category}
+              href={`/Category/${result.id}/articles`}
+            >
+              {result.label}
+            </Link>
+          ))}
+      </section>
+    </main>
   );
 };
 
