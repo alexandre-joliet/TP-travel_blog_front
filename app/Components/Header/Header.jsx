@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-
 import Link from "next/link";
 import styles from "./page.module.css";
 
@@ -9,7 +9,7 @@ export default function Header() {
       <Link href="/">
         <img
           className={styles.header__logo}
-          src="/images/BeachLogo.png"
+          src="/images/airplane.png"
           alt="logo"
         ></img>
       </Link>
