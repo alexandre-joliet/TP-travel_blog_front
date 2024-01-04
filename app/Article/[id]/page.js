@@ -8,10 +8,8 @@ import dayjs from "dayjs";
 
 const Article = ({ data, params }) => {
   const [myData, setMyData] = useState([]);
-  const [date, setDate] = useState([]);
 
   let convertedDate = dayjs(`${myData.created_date}`).format("DD/MM/YY");
-  console.log(convertedDate);
 
   useEffect(() => {
     fetch(`https://api-oblog2.onrender.com/Article/${params.id}`)
