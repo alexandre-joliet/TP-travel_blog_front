@@ -10,7 +10,7 @@ const about = () => {
       <main className={styles.main}>
           <img
             className={styles.article__image}
-            src="./images/john.jpg"
+            src="/images/john.jpg"
             alt="Photo de John de dos devant un paysage de montagne"
           ></img>
         <h1 className={styles.title}>Qui suis-je ?</h1>
