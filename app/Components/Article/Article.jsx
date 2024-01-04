@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -22,7 +23,7 @@ export default function Article({ data }) {
 
   return (
     <>
-      <div className={styles.article}>
+      <article className={styles.article}>
         <Link className={styles.article__link} href={`/Article/${data.id}`}>
           <img
             className={styles.article__img}
@@ -42,27 +43,27 @@ export default function Article({ data }) {
             <img src="./images/heart-full.png" alt=""></img>
           </button>
         </Link>
-        
-        <h5 className={styles.article__category}>{data.label}</h5>
+
+        <h3 className={styles.article__category}>{data.label}</h3>
 
         <Link className={styles.article__link} href={`/Article/${data.id}`}>
-          <h3 className={styles.article__title}>{data.title}</h3>
+          <h2 className={styles.article__title}>{data.title}</h2>
         </Link>
-        <div className={styles.article__text}>
+        <section className={styles.article__text}>
           <div className={styles.article__auteur_date}>
             <img
               className={styles.auteur__img}
               src="./images/john.jpg"
               alt="Avatar de l'auteur"
             ></img>
-            <h5 className={styles.article__pseudo}>{data.pseudo}</h5>
+            <p className={styles.article__pseudo}>{data.pseudo}</p>
             <span className={styles.auteur_date__span}>-</span>
-            <h5 className={styles.article__date}>{convertedDate}</h5>
+            <p className={styles.article__date}>{convertedDate}</p>
           </div>
           <p className={styles.article__description}>{data.description}</p>
           <Link className={styles.article__link_continue} href={`/Article/${data.id}`}>Continuer la lecture</Link>
-        </div>
-      </div>
+        </section>
+      </article>
     </>
   );
 }
