@@ -15,8 +15,12 @@ body {
   font-family: Poppins;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  max-width: 100vw;
-  overflow-x: hidden;
+  /* max-width: 100vw;
+  overflow-x: hidden; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 /*Improve media defaults*/
