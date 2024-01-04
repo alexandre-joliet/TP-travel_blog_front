@@ -22,7 +22,6 @@ export default function Article({ data }) {
   };
 
   return (
-    <>
       <article className={styles.article}>
         <Link className={styles.article__link} href={`/Article/${data.id}`}>
           <img
@@ -34,13 +33,13 @@ export default function Article({ data }) {
             className={styles.favorite__button_empty}
             onClick={HandleClick}
           >
-            <img src="./images/heart-empty.png" alt=""></img>
+            <img src="/images/heart-empty.png" alt=""></img>
           </button>
           <button
             className={styles.favorite__button_full}
             onClick={HandleClick}
           >
-            <img src="./images/heart-full.png" alt=""></img>
+            <img src="/images/heart-full.png" alt=""></img>
           </button>
         </Link>
 
@@ -53,7 +52,7 @@ export default function Article({ data }) {
           <div className={styles.article__auteur_date}>
             <img
               className={styles.auteur__img}
-              src="./images/john.jpg"
+              src="/images/john.jpg"
               alt="Avatar de l'auteur"
             ></img>
             <p className={styles.article__pseudo}>{data.pseudo}</p>
@@ -64,6 +63,5 @@ export default function Article({ data }) {
           <Link className={styles.article__link_continue} href={`/Article/${data.id}`}>Continuer la lecture</Link>
         </section>
       </article>
-    </>
   );
 }
