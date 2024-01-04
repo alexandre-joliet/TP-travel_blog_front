@@ -16,3 +16,11 @@
   justify-content: space-between;
   gap: 1rem;
 }
+
+/* MEDIA QUERIES */
+
+@media all and (max-width: 1023px) {
+  .main__title {
+    margin-bottom: 1rem;
+  }
+}
