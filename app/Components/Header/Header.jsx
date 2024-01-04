@@ -2,6 +2,8 @@
 "use client";
 import Link from "next/link";
 import styles from "./page.module.css";
+import NavBurger from "../Nav_burger/NavBurger";
+import NavFull from "../Nav_full/NavFull";
 
 export default function Header() {
   return (
@@ -14,34 +16,12 @@ export default function Header() {
         ></img>
       </Link>
 
-      <nav className={styles.header__nav}>
-        <div className={styles.nav__menu}>
-          <Link className={styles.nav__link} href="/">
-            Accueil
-          </Link>
-          <Link className={styles.nav__link} href="/Categories">
-            Catégories
-          </Link>
-          <Link className={styles.nav__link} href="/Articles">
-            Articles
-          </Link>
-          {/* <Link href='/Admin/Create'>Création</Link>*/}
-          {/*<Link href='/Admin/Users'>Gestion des utilisateurs</Link>*/}
-          <Link className={styles.nav__link} href="/Favorites">
-            Favoris
-          </Link>
-        </div>
+      {/* BURGER */}
+      <NavBurger></NavBurger>
 
-        {/* <div className={styles.nav__account}>
-          <Link className={styles.nav__link} href="/About">
-            À propos
-          </Link>
-          <Link className={styles.nav__link_account} href="/Login">
-            Connexion / Inscription
-          </Link>
-          <Link href='/Account'>Mon Compte</Link>
-        </div> */}
-      </nav>
+      {/* FULL MENU */}
+      {/* <NavFull></NavFull> */}
+
     </header>
   );
 }
