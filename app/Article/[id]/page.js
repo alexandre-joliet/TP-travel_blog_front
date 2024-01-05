@@ -29,7 +29,7 @@ const Article = ({ data, params }) => {
           src={myData.image}
           alt="photo de paysage"
         ></img>
-        <h3 className={styles.article__category}>{myData.label}</h3>
+        <Link className={styles.article__category} href={`/Category/${myData.categoryid}/articles`}>{myData.label}</Link>
 
         <h1 className={styles.article__title}>{myData.title}</h1>
         <div className={styles.article__auteur_date}>

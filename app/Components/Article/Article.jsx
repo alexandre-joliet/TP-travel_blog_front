@@ -12,13 +12,6 @@ export default function Article({ data }) {
   const convertedDate = dayjs(`${data.created_date}`).format("DD/MM/YY");
 
   const HandleClick = () => {
-    fetch("https://api-oblog2.onrender.com/article.id")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setMyData(data);
-      })
-      .catch((error) => console.error(error));
   };
 
   return (
@@ -43,7 +36,7 @@ export default function Article({ data }) {
           </button>
         </Link>
 
-        <h3 className={styles.article__category}>{data.label}</h3>
+        <Link className={styles.article__category} href={`/Category/${data.categoryid}/articles`}>{data.label}</Link>
 
         <Link className={styles.article__link} href={`/Article/${data.id}`}>
           <h2 className={styles.article__title}>{data.title}</h2>
