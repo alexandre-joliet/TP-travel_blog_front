@@ -12,7 +12,6 @@ const Category = ({ data, params }) => {
     fetch(`https://api-oblog2.onrender.com/Category/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setLabel(data.label);
       })
       .catch((error) => console.error(error));
