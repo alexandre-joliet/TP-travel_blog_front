@@ -6,10 +6,7 @@
 .pnp.js
 .yarn/install-state.gz
 .env
-<<<<<<< HEAD
-=======
 
->>>>>>> a5f232abfb2dbb7598ac4df5b8a8c68658e22efa
 # testing
 /coverage
 
