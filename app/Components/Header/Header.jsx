@@ -7,15 +7,13 @@ import NavFull from "../Nav_full/NavFull";
 import { useEffect, useState } from "react";
 
 export default function Header() {
-  const smallScreen = () => {
-    return window.innerWidth < 880;
-  }
-  
-  const [isSmallScreen, setisSmallScreen] = useState(smallScreen());
+  const [screenSize, setScreenSize] = useState(0);
 
   useEffect(() => {
+    setScreenSize(window.innerWidth);
+
     const handleWindowResize = () => {
-      setisSmallScreen(smallScreen());
+      setScreenSize(window.innerWidth);
     };
 
     window.addEventListener("resize", handleWindowResize);
@@ -34,12 +32,7 @@ export default function Header() {
           alt="logo"
         ></img>
       </Link>
-
-      {/* BURGER */}
-      {isSmallScreen && <NavBurger></NavBurger>}
-
-      {/* FULL MENU */}
-      {!isSmallScreen && <NavFull></NavFull>}
+      {screenSize < 880 ? <NavBurger></NavBurger> : <NavFull></NavFull>}
     </header>
   );
 }
