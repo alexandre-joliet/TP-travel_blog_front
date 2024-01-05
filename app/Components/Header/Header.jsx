@@ -4,8 +4,27 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import NavBurger from "../Nav_burger/NavBurger";
 import NavFull from "../Nav_full/NavFull";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const smallScreen = () => {
+    return window.innerWidth < 880;
+  }
+  
+  const [isSmallScreen, setisSmallScreen] = useState(smallScreen());
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setisSmallScreen(smallScreen());
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <header className={styles.header}>
       <Link href="/">
@@ -17,11 +36,10 @@ export default function Header() {
       </Link>
 
       {/* BURGER */}
-      <NavBurger></NavBurger>
+      {isSmallScreen && <NavBurger></NavBurger>}
 
       {/* FULL MENU */}
-      {/* <NavFull></NavFull> */}
-
+      {!isSmallScreen && <NavFull></NavFull>}
     </header>
   );
 }

@@ -5,9 +5,7 @@ import styles from "./page.module.css";
 
 export default function NavFull() {
   return (
-    <>
-      {/* FULL */}
-      <nav className={`${styles.header__nav} ${styles.hidden}`}>
+      <nav className={styles.header__nav}>
         <ul className={styles.nav__menu}>
           <li className={styles.nav__li}>
             <Link className={styles.nav__link} href="/">
@@ -50,6 +48,5 @@ export default function NavFull() {
           {/* <Link href='/Account'>Mon Compte</Link> */}
         </ul>
       </nav>
-    </>
   );
 }

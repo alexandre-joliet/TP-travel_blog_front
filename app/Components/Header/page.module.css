@@ -6,9 +6,9 @@
 }
 
 .header__logo {
-  width: 3.6rem;
   height: 3.5rem;
   object-fit: fill;
+  margin-right: 0.25rem;
 }
 
 /* MEDIA QUERIES */
