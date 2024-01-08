@@ -70,6 +70,14 @@
   text-align: justify;
 }
 
+.article__text h2 {
+  margin-bottom: 0.5rem;
+}
+
+.article__text p {
+  margin-bottom: 2rem;
+}
+
 
 /* MEDIA QUERIES */
 

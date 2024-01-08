@@ -21,6 +21,9 @@ const Article = ({ data, params }) => {
       .catch((error) => console.error(error));
   }, [params.id]);
 
+  const HTMLArray = { __html: <div>${myData.content}</div>}
+  const HTMLText = { __html: HTMLArray.__html.props.children[1] }
+
   return (
     <main className={styles.main}>
       <article className={styles.article}>
@@ -42,7 +45,7 @@ const Article = ({ data, params }) => {
           <span className={styles.auteur_date__span}>-</span>
           <p className={styles.article__date}>{convertedDate}</p>
         </div>
-        <p className={styles.article__text}>{myData.content}</p>
+        <div dangerouslySetInnerHTML={HTMLText} className={styles.article__text}></div>
       </article>
     </main>
   );
