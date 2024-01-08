@@ -76,8 +76,19 @@
   cursor: pointer;
 }
 
-.message {
-  justify-content: center;
+.signup__validationMessage {
+  background-color: #1b73c5;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+  max-width: 80%;
+  text-align: center;
+}
+
+.signup__validationMessage p {
+  margin: 0.5rem 0;
 }
 
 /* MEDIA QUERIES */
