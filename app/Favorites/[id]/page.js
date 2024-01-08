@@ -10,7 +10,7 @@ const Favorites = ({data, params}) => {
   const [myData, setMyData] = useState([]);
 
  useEffect(() => {
-    fetch(`https://api-oblog2.onrender.com/favorites/${params.id}`)
+    fetch(`https://api-travel-blog.onrender.com/favorites/${params.id}`)
       .then((response) => response.json())
      .then((data) => {
         console.log(data);

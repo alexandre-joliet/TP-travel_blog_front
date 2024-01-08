@@ -9,7 +9,7 @@ export default function Home() {
   const [myData, setMyData] = useState([]);
 
   useEffect(() => {
-    fetch("https://api-oblog2.onrender.com/articles")
+    fetch("https://api-travel-blog.onrender.com/articles")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

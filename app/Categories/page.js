@@ -8,7 +8,7 @@ const Categories = () => {
   const [myData, setMyData] = useState([]);
 
   useEffect(() => {
-    fetch("https://api-oblog2.onrender.com/categories")
+    fetch("https://api-travel-blog.onrender.com/categories")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

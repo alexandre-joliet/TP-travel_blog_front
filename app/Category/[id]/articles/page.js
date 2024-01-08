@@ -9,7 +9,7 @@ const Category = ({ data, params }) => {
   const [label, setLabel] = useState("");
 
   useEffect(() => {
-    fetch(`https://api-oblog2.onrender.com/Category/${params.id}`)
+    fetch(`https://api-travel-blog.onrender.com/Category/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
         setLabel(data.label);
@@ -18,7 +18,7 @@ const Category = ({ data, params }) => {
   }, [params.id]);
 
   useEffect(() => {
-    fetch(`https://api-oblog2.onrender.com/Category/${params.id}/articles`)
+    fetch(`https://api-travel-blog.onrender.com/Category/${params.id}/articles`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

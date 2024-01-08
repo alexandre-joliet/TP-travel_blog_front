@@ -12,7 +12,7 @@ const Article = ({ data, params }) => {
   let convertedDate = dayjs(`${myData.created_date}`).format("DD/MM/YY");
 
   useEffect(() => {
-    fetch(`https://api-oblog2.onrender.com/Article/${params.id}`)
+    fetch(`https://api-travel-blog.onrender.com/Article/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

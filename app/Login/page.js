@@ -30,9 +30,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("https://api-oblog2.onrender.com/signup", {
+    await fetch("https://api-travel-blog.onrender.com/signup", {
       method: "POST",
-      host: "api-oblog2.onrender.com",
+      host: "api-travel-blog.onrender.com",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
