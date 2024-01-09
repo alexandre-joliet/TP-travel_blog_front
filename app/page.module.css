@@ -5,8 +5,24 @@
 }
 
 .main__title {
-  font-size: 4rem;
   color: #0E2E57;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.main__textcontainer {
+  margin: 2rem 0;
+}
+
+.main__subtitle {
+  color: #0E2E57;
+  margin-bottom: 1rem;
+}
+
+.main__textcontainer p {
+  color: darkslategrey;
+  margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .main__articles {
@@ -35,5 +51,11 @@
 @media all and (max-width: 749px) {
   .main {
       align-items: center;
+  }
+}
+
+@media all and (min-width: 1350px) {
+  .main__textcontainer {
+    width: 65%;
   }
 }
