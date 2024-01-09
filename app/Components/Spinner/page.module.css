@@ -1,0 +1,20 @@
+.spinner {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg, rgba(115,180,240,1) 0%, rgba(60,155,240,1) 35%, rgba(35,140,240,1) 100%);
+  border-radius: 10px;
+  margin: 5rem auto;
+  animation: rotatePlane 1.5s infinite ease-in-out;
+}
+
+@keyframes rotatePlane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
