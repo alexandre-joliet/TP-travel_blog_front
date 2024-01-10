@@ -9,20 +9,22 @@ export const useAsyncFetch = (url) => {
     setIsLoading(true);
     setError(undefined);
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+
+        const data = await response.json();
         console.log(data);
         setMyData(data);
-      })
-      .catch((error) => {
-        console.error(error);
-        setError(error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-    }, [url]);
-       
+      } catch (error) {
+        setError(error),
+          console.error("Erreur lors de la récupération des données : ", error);
+      }
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [url]);
+
   return { isLoading, myData, error };
 };
