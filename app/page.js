@@ -4,8 +4,11 @@ import Article from "./Components/Article/Article";
 import Spinner from "./Components/Spinner/Spinner";
 import { useEffect, useState } from "react";
 import { useAsyncFetch } from "./hooks/useAsyncFetch";
+import Header from "./Components/Header/Header";
+import { useCheckAuth } from "./hooks/useCheckAuth";
 
 const Home = () => {
+ 
   const {
     isLoading,
     myData: articles,
@@ -24,7 +27,7 @@ const Home = () => {
   });
 
   return (
-    <main className={styles.main}>
+     <main className={styles.main}>
       <h1 className={styles.main__title}>O&apos;Voyages</h1>
       <div className={styles.main__textcontainer}>
         <h2 className={styles.main__subtitle}>
