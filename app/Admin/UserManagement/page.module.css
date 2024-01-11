@@ -1,0 +1,57 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.main__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.main__usersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(115,180,240,1) 0%, rgba(60,155,240,1) 35%, rgba(35,140,240,1) 100%);
+  border-radius: 20px;
+  color: darkslategray;
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.user__info {
+  text-align: left;
+}
+
+.user__info b {
+  color:rgb(4, 10, 66);
+}
+
+.user__info p {
+  color: white;
+}
+
+.delete__button {
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 2.75rem;
+  width: 2.75rem;
+  object-fit: cover;
+  transition: all 300ms ease-in-out;
+}
+
+.delete__button:hover {
+  box-shadow: 2px 2px 20px 1px rgba(212, 212, 212, 0.5);
+  scale: 1.01;
+}
