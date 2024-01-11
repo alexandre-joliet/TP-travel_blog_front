@@ -37,58 +37,55 @@ export default function NavBurger() {
   const hiddenClass = menuIsOpen ? "" : `${styles.hidden}`;
 
   return (
-    <>
-      {/* BURGER */}
-      <nav
-        className={styles.header__nav}
-        onClick={handleMenuClick}
-        ref={elementRef}
-      >
-        Menu
-        <div className={`${styles.nav__menuContainer} ${hiddenClass}`}>
-          <ul className={styles.nav__menu}>
-            <li className={styles.nav__li}>
-              <Link className={styles.nav__link} href="/">
-                Accueil
-              </Link>
-            </li>
-            <li className={styles.nav__li}>
-              <Link className={styles.nav__link} href="/Categories">
-                Catégories
-              </Link>
-            </li>
+    <nav
+      className={styles.header__nav}
+      onClick={handleMenuClick}
+      ref={elementRef}
+    >
+      Menu
+      <div className={`${styles.nav__menuContainer} ${hiddenClass}`}>
+        <ul className={styles.nav__menu}>
+          <li className={styles.nav__li}>
+            <Link className={styles.nav__link} href="/">
+              Accueil
+            </Link>
+          </li>
+          <li className={styles.nav__li}>
+            <Link className={styles.nav__link} href="/Categories">
+              Catégories
+            </Link>
+          </li>
 
-            <li className={styles.nav__li}>
-              <Link className={styles.nav__link} href="/Articles">
-                Articles
-              </Link>
-            </li>
+          <li className={styles.nav__li}>
+            <Link className={styles.nav__link} href="/Articles">
+              Articles
+            </Link>
+          </li>
 
-            {/* <Link href='/Admin/Create'>Création</Link>*/}
-            {/*<Link href='/Admin/Users'>Gestion des utilisateurs</Link>*/}
-            <li className={styles.nav__li}>
-              <Link className={styles.nav__link} href="/Favorites">
-                Favoris
-              </Link>
-            </li>
-            <li className={styles.nav__li}>
-              <Link className={styles.nav__link} href="/About">
-                À propos
-              </Link>
-            </li>
-          </ul>
+          {/* <Link href='/Admin/Create'>Création</Link>*/}
+          {/*<Link href='/Admin/Users'>Gestion des utilisateurs</Link>*/}
+          <li className={styles.nav__li}>
+            <Link className={styles.nav__link} href="/Favorites">
+              Favoris
+            </Link>
+          </li>
+          <li className={styles.nav__li}>
+            <Link className={styles.nav__link} href="/About">
+              À propos
+            </Link>
+          </li>
+        </ul>
 
-          <ul className={styles.nav__account}>
-            <li className={styles.nav__li}>
-              <Link className={styles.nav__button_sign} href="/Login">
-                Connexion / Inscription
-              </Link>
-            </li>
+        <ul className={styles.nav__account}>
+          <li className={styles.nav__li}>
+            <Link className={styles.nav__button_sign} href="/Login">
+              Connexion / Inscription
+            </Link>
+          </li>
 
-            {/* <Link href='/Account'>Mon Compte</Link> */}
-          </ul>
-        </div>
-      </nav>
-    </>
+          {/* <Link href='/Account'>Mon Compte</Link> */}
+        </ul>
+      </div>
+    </nav>
   );
 }

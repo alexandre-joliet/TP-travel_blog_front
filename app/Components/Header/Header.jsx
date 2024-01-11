@@ -5,8 +5,13 @@ import styles from "./page.module.css";
 import NavBurger from "../Nav_burger/NavBurger";
 import NavFull from "../Nav_full/NavFull";
 import { useEffect, useState } from "react";
+import { useCheckAuth } from "@/app/hooks/useCheckAuth";
 
 export default function Header() {
+  // const { isConnected, userData } = useCheckAuth();  
+
+  // console.log(isConnected);
+  
   const [screenSize, setScreenSize] = useState(0);
 
   useEffect(() => {
@@ -32,7 +37,11 @@ export default function Header() {
           alt="logo"
         ></img>
       </Link>
-      {screenSize < 880 ? <NavBurger></NavBurger> : <NavFull></NavFull>}
+      {screenSize < 880 ? (
+        <NavBurger />
+      ) : (
+        <NavFull />
+      )}
     </header>
   );
 }
