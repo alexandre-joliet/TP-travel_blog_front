@@ -13,9 +13,11 @@ const UserManagement = () => {
   const { isConnected, userData } = useCheckAuth();
   const router = useRouter();
 
-  if (isConnected === false || userData.label !== "Admin") {
-    router.push("/");
-  }
+  useEffect(() => {
+    if (isConnected === false || userData.label !== "Admin") {
+      router.replace("/");
+    }
+  })
 
   // TODO: URL à adapter
   const {
