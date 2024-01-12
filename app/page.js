@@ -56,8 +56,8 @@ const Home = () => {
 
       <input
         className={styles.search__input}
-        type="text"
-        placeholder="Recherche..."
+        type="search"
+        placeholder="Rechercher un article"
         value={searchedText}
         onChange={handleChangeSearchTextInput}
       />
