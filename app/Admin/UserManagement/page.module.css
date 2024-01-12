@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, rgba(115,180,240,1) 0%, rgba(60,155,240,1) 35%, rgba(35,140,240,1) 100%);
+  border: 1px solid rgb(39, 146, 241);
   border-radius: 20px;
   color: darkslategray;
   margin-bottom: 1.5rem;
@@ -37,10 +37,6 @@
   color:rgb(4, 10, 66);
 }
 
-.user__info p {
-  color: white;
-}
-
 .delete__button {
   border: none;
   border-radius: 50%;
@@ -54,4 +50,41 @@
 .delete__button:hover {
   box-shadow: 2px 2px 20px 1px rgba(212, 212, 212, 0.5);
   scale: 1.01;
+}
+
+
+/* MEDIA QUERIES */
+
+@media all and (max-width: 767px) {
+  .main__usersContainer {
+    width: 100%;
+  }
+
+  .user {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user__info {
+    margin-bottom: 0.5rem;
+  }
+
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .main__usersContainer {
+    width: 80%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .main__usersContainer {
+    width: 70%;
+  }
+}
+
+@media all and (min-width: 1440px) {
+  .main__usersContainer {
+    width: 50%;
+  }
 }
