@@ -10,14 +10,14 @@ import { useRouter } from "next/navigation";
 
 const UserManagement = () => {
   // TODO: A revoir
-  const { isConnected, userData } = useCheckAuth();
-  const router = useRouter();
+  // const { isConnected, userData } = useCheckAuth();
+  // const router = useRouter();
 
-  useEffect(() => {
-    if (isConnected === false || userData.label !== "Admin") {
-      router.replace("/");
-    }
-  })
+  // useEffect(() => {
+  //   if (isConnected === false || userData.label !== "Admin") {
+  //     router.replace("/");
+  //   }
+  // })
 
   // TODO: URL à adapter
   const {
@@ -33,17 +33,18 @@ const UserManagement = () => {
   }, [users]);
 
   // TODO: A revoir
-  if (isConnected === false || userData.label !== "Admin") {
-    return (
-      <>
-        <h1>
-          Vous n&apos;avez pas accès à cette page, merci de vous créer un compte
-          et de vous connecter.
-        </h1>
-      </>
-    );
-  }
+  // if (isConnected === false || userData.label !== "Admin") {
+  //   return (
+  //     <>
+  //       <h1>
+  //         Vous n&apos;avez pas accès à cette page, merci de vous créer un compte
+  //         et de vous connecter.
+  //       </h1>
+  //     </>
+  //   );
+  // }
 
+  // TODO: URL à adapter
   const handleDeleteAccount = async (id) => {
     try {
       const responseDelete = await fetch(
@@ -63,14 +64,14 @@ const UserManagement = () => {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.main__title}>Liste des utilisateurs</h1>
+      <h1 className={styles.main__title}>Gestion des utilisateurs</h1>
 
       {isLoading && <Spinner />}
 
       <section className={styles.main__usersContainer}>
         {allUsers &&
           allUsers.map((result) => (
-            <div key={result.id} data={result} className={styles.user}>
+            <div key={result.id} className={styles.user}>
               <div className={styles.user__info}>
                 <p>
                   <b>Pseudo :</b> {result.pseudo}
@@ -82,7 +83,8 @@ const UserManagement = () => {
               <img
                 onClick={() => handleDeleteAccount(result.id)}
                 src="/images/trash-bin.png"
-                alt="logo"
+                alt="Supprimer le compte utilisateur"
+                title="Supprimer le compte utilisateur"
                 className={styles.delete__button}
               ></img>
             </div>
