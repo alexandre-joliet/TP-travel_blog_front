@@ -8,8 +8,8 @@ import Spinner from "@/app/Components/Spinner/Spinner";
 import { useCheckAuth } from "@/app/hooks/useCheckAuth";
 import { useRouter } from "next/navigation";
 
-const UserManagement = () => {
-  // // TODO: A revoir
+const CategoryManagement = () => {
+  // TODO: A revoir
   // const { isConnected, userData } = useCheckAuth();
   // const router = useRouter();
 
@@ -32,7 +32,7 @@ const UserManagement = () => {
     setAllCategories(categories);
   }, [categories]);
 
-  // // TODO: A revoir
+  // TODO: A revoir
   // if (isConnected === false || userData.label !== "Admin") {
   //   return (
   //     <>
@@ -46,6 +46,7 @@ const UserManagement = () => {
 
   const [newCategory, setNewCategory] = useState("");
 
+  // TODO: URL à adapter
   const handleCreateCategory = async (event) => {
     event.preventDefault();
 
@@ -67,14 +68,43 @@ const UserManagement = () => {
   };
 
   // TODO: URL à adapter
+  /**
+   * @param {Event} event
+   */
+  const handleUpdateCategory = async (event, id) => {
+    event.preventDefault();
+
+    const formHTML = event.currentTarget.closest("form");
+    const formData = new FormData(formHTML);
+    const updatedCategoryName = formData.get("name");
+
+    try {
+      const response = await fetch(`http://localhost:3000/category/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `label=${updatedCategoryName}`,
+      });
+
+      const result = await response.json();
+    } catch (error) {
+      console.error("Erreur lors de la modification de la catégorie : ", error);
+    } finally {
+      const responseGet = await fetch("http://localhost:3000/categories");
+      const updatedCategoriesList = await responseGet.json();
+      setAllCategories(updatedCategoriesList);
+    }
+
+    formHTML.reset();
+  };
+
+  // TODO: URL à adapter
   const handleDeleteCategory = async (id) => {
     try {
-      const responseDelete = await fetch(
-        `http://localhost:3000/category/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const response = await fetch(`http://localhost:3000/category/${id}`, {
+        method: "DELETE",
+      });
     } catch (error) {
       console.error("Erreur lors de la suppresion de la catégorie : ", error);
     } finally {
@@ -114,28 +144,25 @@ const UserManagement = () => {
 
           {allCategories &&
             allCategories.map((result) => (
-              <>
+              <div key={result.id}>
                 <h3 className={styles.category__label}>{result.label}</h3>
-                <div
-                  key={result.id}
-                  data={result}
-                  className={styles.categories}
-                >
+                <div className={styles.categories}>
                   <p className={styles.category__info}>
                     <b>Modifier la catégorie</b>
                   </p>
                   <form className={styles.category__edit_form}>
                     <input
                       type="text"
-                      placeholder="Entrez le nouveau nom de la catégorie"
-                      onChange=""
-                      value=""
+                      name="name"
+                      placeholder="Nouveau nom de la catégorie"
                       className={styles.edit__form_input}
                     />
                     <input
                       type="submit"
                       value="Modifier"
-                      onClick=""
+                      onClick={(event) =>
+                        handleUpdateCategory(event, result.id)
+                      }
                       className={styles.edit__form_submit}
                     />
                   </form>
@@ -143,7 +170,6 @@ const UserManagement = () => {
                     <p>
                       <b>Supprimer la catégorie</b>
                     </p>
-                    {/* <p>{result.label}</p> */}
                   </div>
                   <img
                     onClick={() => handleDeleteCategory(result.id)}
@@ -153,7 +179,7 @@ const UserManagement = () => {
                     className={styles.delete__button}
                   ></img>
                 </div>
-              </>
+              </div>
             ))}
         </section>
       </div>
@@ -161,4 +187,4 @@ const UserManagement = () => {
   );
 };
 
-export default UserManagement;
+export default CategoryManagement;
