@@ -41,21 +41,21 @@ export default function NavFull() {
             </Link>
           </li>
           <li className={styles.nav__li}>
-            <Link className={styles.nav__link} href="/Categories">
+            <Link className={styles.nav__link} href="/categories">
               Catégories
             </Link>
           </li>
 
           <li className={styles.nav__li}>
-            <Link className={styles.nav__link} href="/Articles">
+            <Link className={styles.nav__link} href="/articles">
               Articles
             </Link>
           </li>
 
-          {/* <Link href='/Admin/Create'>Création</Link>*/}
-          {/*<Link href='/Admin/Users'>Gestion des utilisateurs</Link>*/}
+          {/* <Link href='/admin/article-management'>Articles</Link>*/}
+          {/*<Link href='/admin/user-management'>Utilisateurs</Link>*/}
           <li className={styles.nav__li}>
-            <Link className={styles.nav__link} href="/Favorites">
+            <Link className={styles.nav__link} href="/favorites">
               Favoris
             </Link>
           </li>
@@ -63,12 +63,12 @@ export default function NavFull() {
 
         <ul className={styles.nav__account}>
           <li className={styles.nav__li}>
-            <Link className={styles.nav__link} href="/About">
+            <Link className={styles.nav__link} href="/about">
               À propos
             </Link>
           </li>
           <li className={styles.nav__li}>
-            <Link className={styles.nav__button_sign} href="/Login">
+            <Link className={styles.nav__button_sign} href="/login">
               Connexion / Inscription
             </Link>
           </li>
@@ -80,7 +80,7 @@ export default function NavFull() {
             </button>
           </li>
 
-          {/* <Link href='/Account'>Mon Compte</Link> */}
+          {/* <Link href='/account'>Mon Compte</Link> */}
         </ul>
       </nav>
   );
