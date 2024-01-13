@@ -6,7 +6,9 @@
 
 .main__title {
   color: #0E2E57;
-  font-size: 4rem;
+  font-family: Lobster, Poppins;
+  font-size: 4.5rem;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 
@@ -53,13 +55,21 @@
 
 @media all and (max-width: 374px) {
   .main__title {
-      font-size: 2rem;
+      font-size: 2.5rem;
+  }
+
+  .main__subtitle {
+    font-size: 1.35rem;
   }
 }
 
 @media all and (min-width: 375px) and (max-width: 749px) {
   .main__title {
-      font-size: 3rem;
+      font-size: 3.5rem;
+  }
+
+  .main__subtitle {
+    font-size: 2.5rem;
   }
 }
 

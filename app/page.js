@@ -31,7 +31,7 @@ const Home = () => {
       <h1 className={styles.main__title}>O&apos;Voyages</h1>
       <div className={styles.main__textcontainer}>
         <h2 className={styles.main__subtitle}>
-          Bienvenue sur O&apos;VOyages !
+          Bienvenue sur O&apos;Voyages !
         </h2>
         <p className={styles.main__introtext}>
           Bienvenue sur mon blog, où vous trouverez ici une passerelle vers mes
