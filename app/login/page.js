@@ -45,6 +45,7 @@ const Login = () => {
       });
   };
 
+  // TODO: Try/catch
   const handleSubmitSignup = async (event) => {
     event.preventDefault();
 

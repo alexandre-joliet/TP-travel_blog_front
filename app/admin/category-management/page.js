@@ -7,10 +7,19 @@ import { useAsyncFetch } from "@/app/hooks/useAsyncFetch";
 import Spinner from "@/app/Components/Spinner/Spinner";
 import { useCheckAuth } from "@/app/hooks/useCheckAuth";
 import { useRouter } from "next/navigation";
+import { cookies } from 'next/headers';
+
+
 
 const CategoryManagement = () => {
+
+  const { isConnected, userData } = useCheckAuth();
+  console.log(userData);
+
+  const cookies = cookies();
+
+
   // TODO: A revoir
-  // const { isConnected, userData } = useCheckAuth();
   // const router = useRouter();
 
   // useEffect(() => {
@@ -18,6 +27,8 @@ const CategoryManagement = () => {
   //     router.replace("/");
   //   }
   // })
+
+  
 
   // TODO: URL à adapter
   const {
@@ -116,7 +127,9 @@ const CategoryManagement = () => {
 
   return (
     <main className={styles.main}>
+    {isConnected && 
       <h1 className={styles.main__title}>Gestion des catégories</h1>
+    }
 
       <div className={styles.main__categoriesContainer}>
         <section className={styles.categories__creation}>

@@ -1,9 +1,33 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
+import { useCheckAuth } from "../hooks/useCheckAuth";
+import { useRouter } from "next/navigation";
 
-const account = () => {
+const Account = () => {
+  const { isConnected, userData } = useCheckAuth();
+
+  console.log(userData);
+
+  if (isConnected === false || userData.label !== "Admin") {
+    return (
+      <>
+        <h1>Vous n&apos;avez pas accès à cette page, merci de vous créer un compte et de vous connecter.</h1>
+      </>
+    )
+  }
+
+
+  // const router = useRouter();
+  
+  // useEffect(() => {
+  //   if (isConnected === false) {
+  //     router.push('/Login');
+  //   }
+  // })
+
+  
   return (
     <>
       <div className={styles.div}>
@@ -19,7 +43,7 @@ const account = () => {
                 ></img>
                 <div className={styles.button}>
                   <button>
-                    <span class="material-symbols-outlined">edit</span>
+                    <span className="material-symbols-outlined">edit</span>
                   </button>
                 </div>
               </div>
@@ -33,10 +57,10 @@ const account = () => {
                 />
                 <div className={styles.button2}>
                   <button>
-                    <span class="material-symbols-outlined">edit</span>
+                    <span className="material-symbols-outlined">edit</span>
                   </button>
                   <button>
-                    <span class="material-symbols-outlined">done</span>
+                    <span className="material-symbols-outlined">done</span>
                   </button>
                 </div>
               </div>
@@ -50,10 +74,10 @@ const account = () => {
                 />
                 <div className={styles.button2}>
                   <button>
-                    <span class="material-symbols-outlined">edit</span>
+                    <span className="material-symbols-outlined">edit</span>
                   </button>
                   <button>
-                    <span class="material-symbols-outlined">done</span>
+                    <span className="material-symbols-outlined">done</span>
                   </button>
                 </div>
               </div>
@@ -66,10 +90,10 @@ const account = () => {
                 />
                 <div className={styles.button2}>
                   <button>
-                    <span class="material-symbols-outlined">edit</span>
+                    <span className="material-symbols-outlined">edit</span>
                   </button>
                   <button>
-                    <span class="material-symbols-outlined">done</span>
+                    <span className="material-symbols-outlined">done</span>
                   </button>
                 </div>
               </div>
@@ -82,10 +106,10 @@ const account = () => {
                 />
                 <div className={styles.button2}>
                   <button>
-                    <span class="material-symbols-outlined">edit</span>
+                    <span className="material-symbols-outlined">edit</span>
                   </button>
                   <button>
-                    <span class="material-symbols-outlined">done</span>
+                    <span className="material-symbols-outlined">done</span>
                   </button>
                 </div>
               </div>
@@ -98,10 +122,10 @@ const account = () => {
                 />
                 <div className={styles.button2}>
                   <button>
-                    <span class="material-symbols-outlined">edit</span>
+                    <span className="material-symbols-outlined">edit</span>
                   </button>
                   <button>
-                    <span class="material-symbols-outlined">done</span>
+                    <span className="material-symbols-outlined">done</span>
                   </button>
                 </div>
               </div>
@@ -119,4 +143,4 @@ const account = () => {
   );
 };
 
-export default account;
+export default Account;
