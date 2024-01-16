@@ -1,9 +1,13 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { redirect } from "next/navigation";
+import checkAuth from "@/middlewares/checkAuth";
 import checkIsAdmin from "@/middlewares/checkIsAdmin";
+import Header from "../Components/Header/Header";
+
 
 const Admin = () => {
+  const isConnected = checkAuth();
   const isAdmin = checkIsAdmin();
 
   if (!isAdmin) {
@@ -11,6 +15,8 @@ const Admin = () => {
   }
 
   return (
+    <>
+    <Header isConnected={isConnected} isAdmin={isAdmin}/>
     <main className={styles.main}>
       <h1 className={styles.main__title}>Administration du site</h1>
 
@@ -26,6 +32,7 @@ const Admin = () => {
       </Link>
       </section>
     </main>
+    </>
   );
 };
 

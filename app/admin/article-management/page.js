@@ -1,8 +1,11 @@
 import { redirect } from 'next/navigation';
-import checkIsAdmin from '@/middlewares/checkIsAdmin';
+import checkAuth from "@/middlewares/checkAuth";
+import checkIsAdmin from "@/middlewares/checkIsAdmin";
 import ArticleManagementComponent from "./ArticleManagementComponent";
+import Header from '@/app/Components/Header/Header';
 
 const ArticleManagement = () => {
+  const isConnected = checkAuth();
   const isAdmin = checkIsAdmin();
 
   if (!isAdmin) {
@@ -11,6 +14,7 @@ const ArticleManagement = () => {
 
   return (
     <>
+      <Header isConnected={isConnected} isAdmin={isAdmin} />
       <ArticleManagementComponent />
     </>
   );
