@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__terms}>
-        <Link className={styles.footer__link} href="/Terms">
+        <Link className={styles.footer__link} href="/terms">
           Mentions légales
         </Link>
       </div>
