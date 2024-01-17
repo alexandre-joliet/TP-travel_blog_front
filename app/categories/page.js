@@ -23,7 +23,7 @@ const Categories = () => {
             <Link
               key={result.id}
               className={styles.section__category}
-              href={`/Category/${result.id}/articles`}
+              href={`/category/${result.id}/articles`}
             >
               {result.label}
             </Link>

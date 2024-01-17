@@ -16,7 +16,7 @@ export default function Article({ data }) {
 
   return (
       <article className={styles.article}>
-        <Link className={styles.article__link} href={`/Article/${data.id}`}>
+        <Link className={styles.article__link} href={`/article/${data.id}`}>
           <img
             className={styles.article__img}
             src={data.image}
@@ -36,9 +36,9 @@ export default function Article({ data }) {
           </button>
         </Link>
 
-        <Link className={styles.article__category} href={`/Category/${data.categoryid}/articles`}>{data.label}</Link>
+        <Link className={styles.article__category} href={`/category/${data.categoryid}/articles`}>{data.label}</Link>
 
-        <Link className={styles.article__link} href={`/Article/${data.id}`}>
+        <Link className={styles.article__link} href={`/article/${data.id}`}>
           <h2 className={styles.article__title}>{data.title}</h2>
         </Link>
         <section className={styles.article__text}>
@@ -53,7 +53,7 @@ export default function Article({ data }) {
             <p className={styles.article__date}>{convertedDate}</p>
           </div>
           <p className={styles.article__description}>{data.description}</p>
-          <Link className={styles.article__link_continue} href={`/Article/${data.id}`}>Continuer la lecture</Link>
+          <Link className={styles.article__link_continue} href={`/article/${data.id}`}>Continuer la lecture</Link>
         </section>
       </article>
   );
