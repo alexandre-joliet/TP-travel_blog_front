@@ -90,6 +90,16 @@
   text-decoration: none;
 }
 
+.nav__logout {
+  background-color: red;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: white;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+}
+
 
 /* MEDIA QUERIES */
 

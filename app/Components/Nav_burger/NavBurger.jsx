@@ -4,7 +4,10 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { useState, useEffect, useRef } from "react";
 
-export default function NavBurger() {
+export default function NavBurger(isConnected, isAdmin) {
+  const isConnectedMenu = isConnected.isConnected.isConnected;
+  const isAdminMenu = isConnected.isConnected.isAdmin;
+
   // DROPDOWN MENU
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   // Creating a reference to a DOM element
@@ -18,7 +21,7 @@ export default function NavBurger() {
     }
   };
 
-  const handleCLickOutside = (event) => {
+  const handleClickOutside = (event) => {
     // Checking if the click is outside the menu element
     if (elementRef.current && !elementRef.current.contains(event.target)) {
       setMenuIsOpen(false);
@@ -27,12 +30,29 @@ export default function NavBurger() {
 
   // Setting up an effect to listen for click events on the document
   useEffect(() => {
-    document.addEventListener("click", handleCLickOutside);
+    document.addEventListener("click", handleClickOutside);
     // Cleaning up the event listener when the component unmounts
     return () => {
-      document.removeEventListener("click", handleCLickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+  //TODO: URL à adapter
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+
+      const message = await response.json();
+      console.log(message);
+
+      window.location.reload();
+    } catch (error) {
+      console.error("Erreur lors de la déconnexion", error);
+    }
+  };
 
   const hiddenClass = menuIsOpen ? "" : `${styles.hidden}`;
 
@@ -51,24 +71,30 @@ export default function NavBurger() {
             </Link>
           </li>
           <li className={styles.nav__li}>
+            <Link className={styles.nav__link} href="/articles">
+              Articles
+            </Link>
+          </li>
+          <li className={styles.nav__li}>
             <Link className={styles.nav__link} href="/categories">
               Catégories
             </Link>
           </li>
 
-          <li className={styles.nav__li}>
-            <Link className={styles.nav__link} href="/articles">
-              Articles
-            </Link>
-          </li>
+          {isAdminMenu && (
+            <li className={styles.nav__li}>
+              <Link className={styles.nav__link} href="/admin">
+                Administration
+              </Link>
+            </li>
+          )}
 
-          {/* <Link href='/admin/article-management'>Articles</Link>*/}
-          {/*<Link href='/admin/user-management'>Utilisateurs</Link>*/}
-          <li className={styles.nav__li}>
+          {/* <li className={styles.nav__li}>
             <Link className={styles.nav__link} href="/favorites">
               Favoris
             </Link>
-          </li>
+          </li> */}
+
           <li className={styles.nav__li}>
             <Link className={styles.nav__link} href="/about">
               À propos
@@ -77,11 +103,22 @@ export default function NavBurger() {
         </ul>
 
         <ul className={styles.nav__account}>
-          <li className={styles.nav__li}>
-            <Link className={styles.nav__button_sign} href="/login">
-              Connexion / Inscription
-            </Link>
-          </li>
+          
+          {!isConnectedMenu && (
+            <li className={styles.nav__li}>
+              <Link className={styles.nav__button_sign} href="/login">
+                Connexion / Inscription
+              </Link>
+            </li>
+          )}
+
+          {isConnectedMenu && (
+            <li className={styles.nav__li}>
+              <button onClick={handleLogout} className={styles.nav__logout}>
+                Déconnexion
+              </button>
+            </li>
+          )}
 
           {/* <Link href='/account'>Mon Compte</Link> */}
         </ul>
