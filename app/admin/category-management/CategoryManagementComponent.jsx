@@ -6,14 +6,14 @@ import styles from "./page.module.css";
 import { useAsyncFetch } from "@/app/hooks/useAsyncFetch";
 import Spinner from "@/app/Components/Spinner/Spinner";
 
-const CategoryManagementComponent = () => {
+const CategoryManagementComponent = (token) => {
   
   // TODO: URL à adapter
   const {
     isLoading,
     myData: categories,
     error,
-  } = useAsyncFetch("https://api-travel-blog.onrender.com/categories");
+  } = useAsyncFetch("https://api-travel-blog.onrender.com/categories", token.token);
 
   const [allCategories, setAllCategories] = useState([]);
 
@@ -33,6 +33,7 @@ const CategoryManagementComponent = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Bearer ${token.token}`,
         },
         body: `label=${newCategory}&creator="1"`,
       });
@@ -61,6 +62,7 @@ const CategoryManagementComponent = () => {
         method: "PATCH",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Bearer ${token.token}`
         },
         body: `label=${updatedCategoryName}`,
       });
@@ -82,6 +84,9 @@ const CategoryManagementComponent = () => {
     try {
       const response = await fetch(`https://api-travel-blog.onrender.com/category/${id}`, {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token.token}`,
+        },
       });
     } catch (error) {
       console.error("Erreur lors de la suppresion de la catégorie : ", error);
