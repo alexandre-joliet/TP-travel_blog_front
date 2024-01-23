@@ -6,13 +6,15 @@ import styles from "./page.module.css";
 import { useAsyncFetch } from "@/app/hooks/useAsyncFetch";
 import Spinner from "@/app/Components/Spinner/Spinner";
 
-const UserManagementComponent = () => {
-
+const UserManagementComponent = (token) => {
   const {
     isLoading,
     myData: users,
     error,
-  } = useAsyncFetch("https://api-travel-blog.onrender.com/admin/users"); // https://api-travel-blog.onrender.com/admin/users
+  } = useAsyncFetch(
+    "https://api-travel-blog.onrender.com/admin/users",
+    token.token
+  );
 
   const [allUsers, setAllusers] = useState([]);
 
@@ -26,10 +28,20 @@ const UserManagementComponent = () => {
         `https://api-travel-blog.onrender.com/admin/users/${id}`,
         {
           method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+          },
         }
       );
 
-      const responseGet = await fetch("https://api-travel-blog.onrender.com/admin/users");
+      const responseGet = await fetch(
+        "https://api-travel-blog.onrender.com/admin/users",
+        {
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+          },
+        }
+      );
       const updatedUsersList = await responseGet.json();
       setAllusers(updatedUsersList);
     } catch (error) {

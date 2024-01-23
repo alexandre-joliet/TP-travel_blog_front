@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useAsyncFetch = (url) => {
+export const useAsyncFetch = (url, token) => {
   const [isLoading, setIsLoading] = useState(false);
   const [myData, setMyData] = useState([]);
   const [error, setError] = useState();
@@ -11,10 +11,14 @@ export const useAsyncFetch = (url) => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
 
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setMyData(data);
       } catch (error) {
         setError(error),
