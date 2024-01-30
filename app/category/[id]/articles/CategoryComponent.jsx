@@ -8,7 +8,7 @@ const CategoryComponent = ({ data, params }) => {
   const [label, setLabel] = useState("");
 
   useEffect(() => {
-    fetch(`https://api-travel-blog.onrender.com/Category/${params.id}`)
+    fetch(`https://api-travel-blog.onrender.com/category/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
         setLabel(data.label);
@@ -17,10 +17,10 @@ const CategoryComponent = ({ data, params }) => {
   }, [params.id]);
 
   useEffect(() => {
-    fetch(`https://api-travel-blog.onrender.com/Category/${params.id}/articles`)
+    fetch(`https://api-travel-blog.onrender.com/category/${params.id}/articles`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setMyData(data);
       })
       .catch((error) => console.error(error));
