@@ -12,17 +12,17 @@ const ArticleComponent = ({ data, params }) => {
   let convertedDate = dayjs(`${myData.created_date}`).format("DD/MM/YY");
 
   useEffect(() => {
-    fetch(`https://api-travel-blog.onrender.com/Article/${params.id}`)
+    fetch(`https://api-travel-blog.onrender.com/article/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setMyData(data);
       })
       .catch((error) => console.error(error));
   }, [params.id]);
 
-  const HTMLArray = { __html: <div>${myData.content}</div>}
-  const HTMLText = { __html: HTMLArray.__html.props.children[1] }
+  const HTMLObject = { __html: <div>${myData.content}</div>}
+  const HTMLText = { __html: HTMLObject.__html.props.children[1] }
 
   return (
     <main className={styles.main}>
