@@ -64,9 +64,12 @@ const LoginComponent = () => {
           credentials: "include",
         });
         const userFound = await response.json();
-        // console.log(userFound);
 
-        window.location.reload();
+        if (userFound.error) {
+          setLoginFormErrorMessage(true)
+        } else {
+          window.location.reload();
+        }
       } catch (error) {
         console.log(error);
         console.error("Un problème est survenu lors de la connexion : ", error);
@@ -274,7 +277,7 @@ const LoginComponent = () => {
           />
           {loginMailErrorMessage === true && (
             <div className={styles.error__message}>
-              L'adresse mail n'est pas valide
+              L&apos;adresse mail n&apos;est pas valide
             </div>
           )}
 
@@ -298,7 +301,7 @@ const LoginComponent = () => {
         </form>
         {loginFormErrorMessage === true && (
           <div className={styles.error__message_form}>
-            Les informations saisies ne sont pas conformes. Merci de les
+            Les informations saisies ne sont pas correctes. Merci de les
             corriger.
           </div>
         )}
@@ -321,7 +324,7 @@ const LoginComponent = () => {
           />
           {signupLastNameErrorMessage === true && (
             <div className={styles.error__message}>
-              Le nom n'est pas valide. Il ne peut pas contenir de nombres ou de
+              Le nom n&apos;est pas valide. Il ne peut pas contenir de nombres ou de
               caractères spéciaux.
             </div>
           )}
@@ -340,7 +343,7 @@ const LoginComponent = () => {
           />
           {signupFirstNameErrorMessage === true && (
             <div className={styles.error__message}>
-              Le prénom n'est pas valide. Il ne peut pas contenir de nombres ou
+              Le prénom n&apos;est pas valide. Il ne peut pas contenir de nombres ou
               de caractères spéciaux.
             </div>
           )}
@@ -359,7 +362,7 @@ const LoginComponent = () => {
           />
           {signupPseudoErrorMessage === true && (
             <div className={styles.error__message}>
-              Le pseudo n'est pas valide. Seuls les caractères spéciaux -, _ et
+              Le pseudo n&apos;est pas valide. Seuls les caractères spéciaux -, _ et
               @ sont acceptés.
             </div>
           )}
@@ -378,7 +381,7 @@ const LoginComponent = () => {
           />
           {signupMailErrorMessage === true && (
             <div className={styles.error__message}>
-              L'adresse mail n'est pas valide
+              L&apos;adresse mail n&apos;est pas valide
             </div>
           )}
 
@@ -396,7 +399,7 @@ const LoginComponent = () => {
           />
           {signupPasswordErrorMessage === true && (
             <div className={styles.error__message}>
-              Le mot de passe n'est pas valide. Il doit faire entre 8 et 12
+              Le mot de passe n&apos;est pas valide. Il doit faire entre 8 et 12
               caractères. Seuls les caractères spéciaux -, _ et @ sont acceptés.
             </div>
           )}
