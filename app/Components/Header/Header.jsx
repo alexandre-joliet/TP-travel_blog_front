@@ -7,20 +7,27 @@ import NavFull from "../Nav_full/NavFull";
 import { useEffect, useState } from "react";
 
 export default function Header(isConnected, isAdmin) {
+  
+  const smallScreen = "(max-width: 880px)";
 
-  const [screenSize, setScreenSize] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(
+    window.matchMedia(smallScreen).matches
+  );
 
   useEffect(() => {
-    setScreenSize(window.innerWidth);
+    const mediaQuery = window.matchMedia(smallScreen);
 
-    const handleWindowResize = () => {
-      setScreenSize(window.innerWidth);
-    };
+    // MediaQueryList est un objet qui stocke les informations des media queries
+    // 'matches' est un boolean qui retourne 'true' si le document correspond à la media query
+    function handleScreenChange(MediaQueryList) {
+      setIsSmallScreen(MediaQueryList.matches);
+    }
 
-    window.addEventListener("resize", handleWindowResize);
+    // Ajoute un écouteur d'événements pour détecter les changements d'écran
+    mediaQuery.addEventListener("change", handleScreenChange);
 
     return () => {
-      window.removeEventListener("resize", handleWindowResize);
+      mediaQuery.removeEventListener("change", handleScreenChange);
     };
   }, []);
 
@@ -30,11 +37,11 @@ export default function Header(isConnected, isAdmin) {
         <img
           className={styles.header__logo}
           src="/images/airplane.png"
-          alt="logo"
+          alt="Logo représentant un avion blanc faisant le tour de la Terre"
         ></img>
       </Link>
-      {screenSize < 880 ? (
-        <NavBurger isConnected={isConnected} isAdmin={isAdmin}/>
+      {isSmallScreen ? (
+        <NavBurger isConnected={isConnected} isAdmin={isAdmin} />
       ) : (
         <NavFull isConnected={isConnected} isAdmin={isAdmin} />
       )}
