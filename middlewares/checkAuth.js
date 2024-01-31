@@ -14,7 +14,7 @@ const checkAuth = () => {
   } else {
     const value = parseJwt(token.value)
     user = value.userInfo;
-    console.log(user)
+    // console.log(user)
 
     isConnected = true;
     return isConnected;

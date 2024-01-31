@@ -14,7 +14,7 @@ const checkIsAdmin = () => {
   } else {
     const value = parseJwt(token.value)
     user = value.userInfo;
-    console.log(user);
+    // console.log(user);
   }
 
   if (user.label === 'Admin') {
