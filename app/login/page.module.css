@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: center;
-  gap: 10rem;
+  gap: 5rem;
 }
 
 .signin__title,
@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
+  width: 25rem;
 }
 
 .signin__form,
