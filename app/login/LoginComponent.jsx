@@ -67,7 +67,8 @@ const LoginComponent = () => {
         if (userFound.error) {
           setLoginFormErrorMessage(true)
         } else {
-          window.location.reload();
+
+          // window.location.reload();
         }
       } catch (error) {
         console.log(error);
