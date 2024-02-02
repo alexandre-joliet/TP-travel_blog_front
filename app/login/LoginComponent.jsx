@@ -70,7 +70,7 @@ const LoginComponent = () => {
           setLoginFormErrorMessage(true)
         } else {
 
-          createCookie('userToken', data.userToken);
+          createCookie('userToken', data.userToken, { secure: true, httpOnly: true, maxAge: 1000 * 60 * 5});
 
           // window.location.reload();
         }
