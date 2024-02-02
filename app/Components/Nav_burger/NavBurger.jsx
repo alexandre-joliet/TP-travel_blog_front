@@ -7,7 +7,7 @@ import { destroyCookie } from "@/app/login/actions";
 import { useRouter } from "next/navigation";
 
 export default function NavBurger(isConnected, isAdmin) {
-  const router = useRouter;
+  const router = useRouter();
   const isConnectedMenu = isConnected.isConnected.isConnected;
   const isAdminMenu = isConnected.isConnected.isAdmin;
 
