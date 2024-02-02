@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { destroyCookie } from "@/app/login/actions";
+import { useRouter } from "next/router";
 
 export default function NavFull(isConnected, isAdmin) {
   const isConnectedMenu = isConnected.isConnected.isConnected;
@@ -11,7 +12,7 @@ export default function NavFull(isConnected, isAdmin) {
   //TODO: URL à adapter
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:3000/logout", {
+      const response = await fetch("https://api-travel-blog.onrender.com/logout", { // ttps://api-travel-blog.onrender.com  http://localhost:3000
         method: "POST",
         credentials: "include",
       });
@@ -21,7 +22,11 @@ export default function NavFull(isConnected, isAdmin) {
 
       destroyCookie('userToken');
 
-      window.location.reload();
+      const router = useRouter();
+      router.push('/')
+
+      // window.location.reload();
+
     } catch (error) {
       console.error("Erreur lors de la déconnexion", error);
     }

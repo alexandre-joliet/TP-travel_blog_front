@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { useState, useEffect, useRef } from "react";
 import { destroyCookie } from "@/app/login/actions";
+import { useRouter } from "next/router";
 
 export default function NavBurger(isConnected, isAdmin) {
   const isConnectedMenu = isConnected.isConnected.isConnected;
@@ -51,7 +52,11 @@ export default function NavBurger(isConnected, isAdmin) {
 
       destroyCookie('userToken');
 
-      window.location.reload();
+      const router = useRouter();
+      router.push('/')
+
+      // window.location.reload();
+
     } catch (error) {
       console.error("Erreur lors de la déconnexion", error);
     }
