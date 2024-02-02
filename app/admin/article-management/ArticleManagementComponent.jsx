@@ -17,9 +17,8 @@ const ArticleManagementComponent = () => {
     setAllArticles(articles);
   }, [articles]);
 
-  // TODO: URL à adapter
   const { myData: categories } = useAsyncFetch(
-    "http://localhost:3000/categories"
+    "https://api-travel-blog.onrender.com/categories"
   ); // https://api-travel-blog.onrender.com/admin/users
 
   const [allCategories, setAllCategories] = useState(categories);
