@@ -64,7 +64,7 @@ const LoginComponent = () => {
           credentials: "include",
         });
         const data = await response.json();
-        console.log(data.userToken);
+        // console.log(data.userToken);
 
         if (data.error) {
           setLoginFormErrorMessage(true)
