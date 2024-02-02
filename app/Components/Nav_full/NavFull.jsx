@@ -3,9 +3,10 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { destroyCookie } from "@/app/login/actions";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function NavFull(isConnected, isAdmin) {
+  const router = useRouter();
   const isConnectedMenu = isConnected.isConnected.isConnected;
   const isAdminMenu = isConnected.isConnected.isAdmin;
 
@@ -22,7 +23,6 @@ export default function NavFull(isConnected, isAdmin) {
 
       destroyCookie('userToken');
 
-      const router = useRouter();
       router.push('/')
 
       // window.location.reload();
