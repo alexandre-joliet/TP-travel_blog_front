@@ -54,7 +54,7 @@ const LoginComponent = () => {
     if (validation.error === undefined) {
       try {
         // TODO: A repasser sur la bonne URL en prod
-        const response = await fetch("http://localhost:3000/login", { // https://api-travel-blog.onrender.com/login http://localhost:3000/login
+        const response = await fetch("https://api-travel-blog.onrender.com/login", { // https://api-travel-blog.onrender.com/login http://localhost:3000/login
           method: "POST",
           // host: "api-travel-blog.onrender.com",
           headers: {
