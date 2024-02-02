@@ -40,7 +40,7 @@ const ArticleManagementComponent = (token) => {
     event.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/article", { // http://localhost:3000 https://api-travel-blog.onrender.com
+      const response = await fetch("https://api-travel-blog.onrender.com/article", { // http://localhost:3000 https://api-travel-blog.onrender.com
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
