@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import { useAsyncFetch } from "@/app/hooks/useAsyncFetch";
 import Spinner from "@/app/Components/Spinner/Spinner";
 
-const ArticleManagementComponent = () => {
+const ArticleManagementComponent = (token) => {
   const { isLoading, myData: articles } = useAsyncFetch(
     "https://api-travel-blog.onrender.com/articles"
   );
@@ -19,7 +19,7 @@ const ArticleManagementComponent = () => {
 
   const { myData: categories } = useAsyncFetch(
     "https://api-travel-blog.onrender.com/categories"
-  ); // https://api-travel-blog.onrender.com/admin/users
+  );
 
   const [allCategories, setAllCategories] = useState(categories);
 
@@ -40,10 +40,11 @@ const ArticleManagementComponent = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("https://api-travel-blog.onrender.com/article", {
+      const response = await fetch("http://localhost:3000/article", { // http://localhost:3000 https://api-travel-blog.onrender.com
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Bearer ${token.token}`,
         },
         body: `title=${newTitle}&description=${newDescription}&content=${newContent}&image=${newImage}&category=${newCategory}`,
       });
@@ -68,6 +69,9 @@ const ArticleManagementComponent = () => {
         `https://api-travel-blog.onrender.com/article/${id}`,
         {
           method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+          },
         }
       );
 
@@ -213,7 +217,7 @@ const ArticleManagementComponent = () => {
               <div key={result.id}>
                 <h3 className={styles.category__label}>{result.title}</h3>
                 <div className={styles.categories}>
-                  <p className={styles.article__info}>
+                  {/* <p className={styles.article__info}>
                     <b>Modifier la catégorie</b>
                   </p>
                   <form className={styles.article__edit_form}>
@@ -229,7 +233,7 @@ const ArticleManagementComponent = () => {
                       // onClick=""
                       className={styles.edit__form_submit}
                     />
-                  </form>
+                  </form> */}
                   <div className={styles.article__info}>
                     <p>
                       <b>Supprimer l&apos;article </b>
