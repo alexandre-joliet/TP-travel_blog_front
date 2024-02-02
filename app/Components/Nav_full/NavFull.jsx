@@ -2,6 +2,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./page.module.css";
+import { destroyCookie } from "@/app/login/actions";
 
 export default function NavFull(isConnected, isAdmin) {
   const isConnectedMenu = isConnected.isConnected.isConnected;
@@ -17,6 +18,8 @@ export default function NavFull(isConnected, isAdmin) {
 
       const message = await response.json();
       console.log(message);
+
+      destroyCookie('userToken');
 
       window.location.reload();
     } catch (error) {

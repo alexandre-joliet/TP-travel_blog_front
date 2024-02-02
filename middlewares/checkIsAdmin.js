@@ -4,7 +4,9 @@ import parseJwt from '@/middlewares/parseToken';
 const checkIsAdmin = () => {
   
   const cookieStore = cookies();
-  const token = cookieStore.get('token')
+  // const token = cookieStore.get('token')
+  const token = cookieStore.get('userToken')
+
 
   let user;
   let isConnectedAdmin = false;

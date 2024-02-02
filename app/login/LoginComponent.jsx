@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import Joi, { valid } from "joi";
+import { createCookie } from "./actions"
 
 const LoginComponent = () => {
   const [lastName, setLastName] = useState("");
@@ -53,20 +54,23 @@ const LoginComponent = () => {
     if (validation.error === undefined) {
       try {
         // TODO: A repasser sur la bonne URL en prod
-        const response = await fetch("https://api-travel-blog.onrender.com/login", {
+        const response = await fetch("http://localhost:3000/login", { // https://api-travel-blog.onrender.com/login http://localhost:3000/login
           method: "POST",
-          host: "api-travel-blog.onrender.com",
+          // host: "api-travel-blog.onrender.com",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
           body: `mail=${mailLogin}&password=${passwordLogin}`,
           credentials: "include",
         });
-        const userFound = await response.json();
+        const data = await response.json();
+        console.log(data.userToken);
 
-        if (userFound.error) {
+        if (data.error) {
           setLoginFormErrorMessage(true)
         } else {
+
+          createCookie('userToken', data.userToken);
 
           // window.location.reload();
         }

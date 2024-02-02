@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { useState, useEffect, useRef } from "react";
+import { destroyCookie } from "@/app/login/actions";
 
 export default function NavBurger(isConnected, isAdmin) {
   const isConnectedMenu = isConnected.isConnected.isConnected;
@@ -40,13 +41,15 @@ export default function NavBurger(isConnected, isAdmin) {
   //TODO: URL à adapter
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:3000/logout", {
+      const response = await fetch("https://api-travel-blog.onrender.com/logout", { // https://api-travel-blog.onrender.com  http://localhost:3000
         method: "POST",
         credentials: "include",
       });
 
       const message = await response.json();
       console.log(message);
+
+      destroyCookie('userToken');
 
       window.location.reload();
     } catch (error) {
